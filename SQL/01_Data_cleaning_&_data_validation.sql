@@ -23,10 +23,10 @@ having count(*) >1;
 select customer_unique_id, count(*) as duplicate_uid from customers
 group by customer_unique_id
 having count(*) >1
-order by duplicate_uid desc; -- found 2997 row duplicate, 
+order by duplicate_uid desc; -- found 2997 row duplicate, same person may placed 1 or more different orders.
 
 select customer_id, customer_unique_id from customers
-where customer_unique_id = '8d50f5eadf50201ccdcedfb9e2ac8455'; -- confirm duplicate random uid
+where customer_unique_id = '8d50f5eadf50201ccdcedfb9e2ac8455'; -- confirm duplicate random uid, found 17 rows that means this customer placed 17 different orders
 -- 
 
 select c.customer_unique_id, count (o.order_id) as total_orders from customers c
@@ -34,7 +34,7 @@ join orders o
 on c.customer_id = o.customer_id
 group by c.customer_unique_id
 having count(o.order_id) > 1
-order by total_orders desc; -- how many customers makes multiple purchase?
+order by total_orders desc; -- how many customers makes multiple purchase? it shows 2997.
 
 -- Order table
 
