@@ -1,5 +1,4 @@
-# Olist-Ecommerce-Business-Performance-Analysis
-# Olist E-commerce Business Performance Analysis
+# Olist Brazilian E-commerce Business Performance Analysis
 
 ## Project Overview
 
